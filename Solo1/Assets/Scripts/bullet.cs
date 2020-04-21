@@ -5,7 +5,6 @@ using UnityEngine;
 public class bullet : MonoBehaviour
 {
     public Color[] colors;
-    /* = { Color.green, Color.red, Color.white, Color.blue, Color.yellow, Color.magenta, Color.cyan}*/
     void Start()
     {
         Color randomColor = colors[Random.Range(0, colors.Length)];

@@ -9,6 +9,8 @@ public class shooting : MonoBehaviour
     public Transform shootRotator;
     public float bulletSpeed;
 
+    [Header("Game get harder by: (0.65 - 0.9)")]
+    public float extraDifficulty;
     [Header("Speed of attack factor:")]
     public float attackSpeed = 2.0f;
     public float minShootTimer = 0.3f;
@@ -26,13 +28,9 @@ public class shooting : MonoBehaviour
 
     private void Shoot()
     {
-        
-        
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, shootRotator.rotation);
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         rb.AddForce(shootRotator.forward * bulletSpeed, ForceMode.Impulse);
-        
-        
     }
 
     private void ShootTiming()
@@ -47,7 +45,7 @@ public class shooting : MonoBehaviour
     public void Difficulty()
     {
        
-            attackSpeed -= 0.1f;
+            attackSpeed *= extraDifficulty;
             Debug.Log("more difficult nao");
        
     }

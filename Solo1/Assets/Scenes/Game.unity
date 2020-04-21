@@ -193,6 +193,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 139035081}
   m_CullTransparentMesh: 0
+--- !u!114 &241305352 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7884950733909875029, guid: d98d7321470a752449265f9192d11f35,
+    type: 3}
+  m_PrefabInstance: {fileID: 7884950734386434682}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a365d34c9e9f344cb669d3bd6771439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &280182870
 GameObject:
   m_ObjectHideFlags: 0
@@ -1140,6 +1152,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1212,6 +1225,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 643a4b7fa9a09d74a917ffc9ba80d494, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camTransform: {fileID: 0}
+  cameraShakes: 0.3
+  shakeAmount: 0.7
+  decreaseFactor: 1
 --- !u!1 &976389847
 GameObject:
   m_ObjectHideFlags: 0
@@ -1399,12 +1428,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   updater: {fileID: 1412532241}
+  shooting: {fileID: 241305352}
   health: 3
   score: 0
   coinScore: 10
   coinSpawnTime: 2
   coinPrefab: {fileID: 9017553744986410098, guid: 787235e9604fdc245be3681096402016,
     type: 3}
+  moreDifficult: 10
 --- !u!4 &1136709774
 Transform:
   m_ObjectHideFlags: 0
@@ -2049,6 +2080,11 @@ PrefabInstance:
       propertyPath: isInvurnerable
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7884950735719106824, guid: d98d7321470a752449265f9192d11f35,
+        type: 3}
+      propertyPath: Camera
+      value: 
+      objectReference: {fileID: 963194229}
     - target: {fileID: 7884950735719106819, guid: d98d7321470a752449265f9192d11f35,
         type: 3}
       propertyPath: hearts.Array.data[0]
@@ -2064,5 +2100,20 @@ PrefabInstance:
       propertyPath: hearts.Array.data[2]
       value: 
       objectReference: {fileID: 921611805}
+    - target: {fileID: 7884950733909875029, guid: d98d7321470a752449265f9192d11f35,
+        type: 3}
+      propertyPath: moreDifficult
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7884950733909875029, guid: d98d7321470a752449265f9192d11f35,
+        type: 3}
+      propertyPath: attackSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7884950733909875029, guid: d98d7321470a752449265f9192d11f35,
+        type: 3}
+      propertyPath: extraDifficulty
+      value: 0.9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d98d7321470a752449265f9192d11f35, type: 3}

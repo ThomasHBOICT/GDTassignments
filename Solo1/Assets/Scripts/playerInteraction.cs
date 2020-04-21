@@ -8,6 +8,7 @@ public class playerInteraction : MonoBehaviour
     public gameController controller;
     public playerHealth health;
     public UIcontrol UI;
+    public cameraShake Camera;
 
     public bool isInvurnerable = false;
     
@@ -24,8 +25,10 @@ public class playerInteraction : MonoBehaviour
     {
         if (collision.collider.tag == "Bullet")
         {
+            
             if (isInvurnerable == false && health.health > 1)
             {
+                Camera.camShake();
                 Debug.Log("damaged");
                 // lose health
                 health.loseHealth();
@@ -33,6 +36,7 @@ public class playerInteraction : MonoBehaviour
             }
             else if (isInvurnerable == false && health.health == 1)
             {
+                
                 health.loseHealth();
                 EndGame();
             }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class gameController : MonoBehaviour
 {
+    [Header("Scripts")]
     public scoreUpdate updater;
     public shooting shooting;
 
@@ -16,9 +17,11 @@ public class gameController : MonoBehaviour
     public float coinSpawnTime;
     public GameObject coinPrefab;
 
-    [Header("Attack speed:Level gets more difficult every:")]
+    [Header("Attack speed, level gets more difficult every:")]
     public float moreDifficult;
 
+
+    // privates
     private float difficultyTimer = 1f;
     private float coinTimer = 0f;
     private float timer = 0f;
