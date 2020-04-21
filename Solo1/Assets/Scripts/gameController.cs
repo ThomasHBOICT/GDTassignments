@@ -7,17 +7,21 @@ public class gameController : MonoBehaviour
     [Header("Scripts")]
     public scoreUpdate updater;
     public shooting shooting;
+    public UIcontrol UI;
+    public playerHealth playerHealth;
 
     [Header("Stats")]
-    public float health = 3;
-    public float score = 0;
+    public int health = 3;
+    public int score = 0;
 
     [Header("Coin")]
-    public float coinScore = 20;
+    public int coinsOwned = 0;
+    public bool shopOpen = false;
+    public int coinScore = 20;
     public float coinSpawnTime;
     public GameObject coinPrefab;
 
-    [Header("Attack speed, level gets more difficult every:")]
+    [Header("Attack speed, level gets more difficult every __ seconds")]
     public float moreDifficult;
 
 
@@ -39,6 +43,7 @@ public class gameController : MonoBehaviour
         scoreTime();
         SpawnCoin();
         gameDifficulty();
+        OpenCloseShop();
     }
 
     private void scoreTime()
@@ -49,16 +54,34 @@ public class gameController : MonoBehaviour
         {
             Debug.Log("score added");
             timer = 0f;
-            score += 1;
-            updater.score = score;
-            updater.ScoreUpdate();
+            scoreUpdater(1);
         }
     }
 
     public void CoinPickup()
     {
-        score += coinScore;
-        updater.ScoreUpdate();
+        coinUpdater(1);
+        scoreUpdater(coinScore);
+    }
+
+    private void OpenCloseShop()
+    {
+        if (coinsOwned >= 10)
+        {
+            shopOpen = true;
+            UI.OpenShop();
+        }
+        else
+        {
+            shopOpen = false;
+            UI.CloseShop();
+        }
+    }
+    
+    public void LifeBought()
+    {
+        coinUpdater(-10);
+        playerHealth.health += 1;
     }
 
     private void SpawnCoin()
@@ -87,5 +110,19 @@ public class gameController : MonoBehaviour
             Debug.Log("more difficult nao");
             difficultyTimer = 0f;
         }
+    }
+
+    private void scoreUpdater(int upValue)
+    {
+        score += upValue;
+        updater.score = score;
+        updater.ScoreUpdate();
+    }
+
+    private void coinUpdater(int coinValue)
+    {
+        coinsOwned += coinValue;
+        updater.coins = coinsOwned;
+        updater.CoinUpdate();
     }
 }

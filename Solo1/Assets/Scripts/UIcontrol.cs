@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class UIcontrol : MonoBehaviour
 {
     public GameObject pauseMenuUI;
+    public GameObject shopMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,5 +35,15 @@ public class UIcontrol : MonoBehaviour
     public void QuitGame()
     {
         Debug.Log("quitgame");
+    }
+
+    public void OpenShop()
+    {
+        shopMenu.SetActive(true);
+    }
+
+    public void CloseShop()
+    {
+        shopMenu.SetActive(false);
     }
 }

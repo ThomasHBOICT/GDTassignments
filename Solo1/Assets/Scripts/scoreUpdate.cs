@@ -6,13 +6,22 @@ using TMPro;
 
 public class scoreUpdate : MonoBehaviour
 {
-    public TMP_Text field;
-    public float score = 0;
-
+    public TMP_Text scoreField;
+    public TMP_Text coinField;
+    [HideInInspector]
+    public int score = 0;
+    [HideInInspector]
+    public int coins = 0; 
 
     public void ScoreUpdate()
     {
         Debug.Log("score updated");
-        field.text = score + "";
+        scoreField.text =  score.ToString();
+    }
+
+    public void CoinUpdate()
+    {
+        Debug.Log("coins updated");
+        coinField.text = coins.ToString() + "X";
     }
 }
