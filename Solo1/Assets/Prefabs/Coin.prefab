@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 530033750193866273}
   - component: {fileID: 5574428034434291802}
   m_Layer: 11
-  m_Name: Cylinder
+  m_Name: Coin
   m_TagString: Coin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,3 +106,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationPerSecond: 180
+  destroyTime: 3

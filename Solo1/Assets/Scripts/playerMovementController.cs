@@ -5,8 +5,7 @@ using UnityEngine;
 public class playerMovementController : MonoBehaviour
 {
     public float moveSpeed;
-    public float jumpForce;
-    public float jumpRaycastDistance;
+    Vector3 movement;
 
     private Rigidbody rb;
     // Start is called before the first frame update
@@ -14,13 +13,6 @@ public class playerMovementController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        Jump();
-    }
-
     private void FixedUpdate()
     {
         Move();
@@ -28,28 +20,12 @@ public class playerMovementController : MonoBehaviour
 
     private void Move()
     {
-        float hAxis = Input.GetAxisRaw("Horizontal");
-        float vAxis = Input.GetAxisRaw("Vertical");
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.z = Input.GetAxisRaw("Vertical");
+        movement = movement.normalized;
+        
 
-        Vector3 movement = new Vector3(hAxis, 0, vAxis) * moveSpeed;
-
-        Vector3 newPosition = rb.position + movement;
-
-        rb.MovePosition(newPosition);
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
-    private void Jump()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (isGrounded())
-            {
-                rb.AddForce(0, jumpForce, 0, ForceMode.Impulse);
-            }
-        }
-    }
-
-    private bool isGrounded()
-    {
-        return Physics.Raycast(transform.position, Vector3.down, jumpRaycastDistance);
-    }
+    
 }
