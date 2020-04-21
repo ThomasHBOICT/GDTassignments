@@ -5,6 +5,7 @@ using UnityEngine;
 public class gameController : MonoBehaviour
 {
     public scoreUpdate updater;
+    public shooting shooting;
 
     [Header("Stats")]
     public float health = 3;
@@ -14,8 +15,11 @@ public class gameController : MonoBehaviour
     public float coinScore = 20;
     public float coinSpawnTime;
     public GameObject coinPrefab;
-    
 
+    [Header("Attack speed:Level gets more difficult every:")]
+    public float moreDifficult;
+
+    private float difficultyTimer = 1f;
     private float coinTimer = 0f;
     private float timer = 0f;
     private float delayAmount = 1f;
@@ -31,6 +35,7 @@ public class gameController : MonoBehaviour
     {
         scoreTime();
         SpawnCoin();
+        gameDifficulty();
     }
 
     private void scoreTime()
@@ -66,6 +71,18 @@ public class gameController : MonoBehaviour
             Vector3 spawnPos = new Vector3(Xrange, 1, Zrange);
             Instantiate(coinPrefab, spawnPos, Quaternion.Euler(0, 0, 90));
             coinTimer = 0f;
+        }
+    }
+
+    private void gameDifficulty()
+    {
+        difficultyTimer += Time.deltaTime;
+
+        if (difficultyTimer >= moreDifficult)
+        {
+            shooting.Difficulty();
+            Debug.Log("more difficult nao");
+            difficultyTimer = 0f;
         }
     }
 }
