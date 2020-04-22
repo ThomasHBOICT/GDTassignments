@@ -9,6 +9,7 @@ public class gameController : MonoBehaviour
     public shooting shooting;
     public UIcontrol UI;
     public playerHealth playerHealth;
+    public shieldSize shieldSize;
 
     [Header("Stats")]
     public int health = 3;
@@ -20,6 +21,9 @@ public class gameController : MonoBehaviour
     public int coinScore = 20;
     public float coinSpawnTime;
     public GameObject coinPrefab;
+
+    [Header("Shield")]
+    public float scaleSize = .1f;
 
     [Header("Attack speed, level gets more difficult every __ seconds")]
     public float moreDifficult;
@@ -52,7 +56,6 @@ public class gameController : MonoBehaviour
 
         if (timer >= delayAmount)
         {
-            Debug.Log("score added");
             timer = 0f;
             scoreUpdater(1);
         }
@@ -82,6 +85,12 @@ public class gameController : MonoBehaviour
     {
         coinUpdater(-10);
         playerHealth.health += 1;
+    }
+
+    public void ShieldBought()
+    {
+        coinUpdater(-10);
+        shieldSize.ShieldUp(scaleSize);
     }
 
     private void SpawnCoin()

@@ -15,7 +15,6 @@ public class scoreUpdate : MonoBehaviour
 
     public void ScoreUpdate()
     {
-        Debug.Log("score updated");
         scoreField.text =  score.ToString();
     }
 

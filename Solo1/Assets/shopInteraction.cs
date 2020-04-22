@@ -22,7 +22,7 @@ public class shopInteraction : MonoBehaviour
     {
         if (gameController.shopOpen)
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Joystick1Button0))
             {
                 if(playerHealth.health < playerHealth.numOfHearts)
                 {
@@ -34,6 +34,12 @@ public class shopInteraction : MonoBehaviour
                     Debug.Log("already max health. lol");
                 }
             }
+            if(Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Joystick1Button2))
+            {
+                gameController.ShieldBought();
+                Debug.Log("shield leveled up, nice");
+            }
+
         }
     }
 }
