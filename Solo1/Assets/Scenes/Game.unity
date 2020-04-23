@@ -351,7 +351,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &292973118
 RectTransform:
   m_ObjectHideFlags: 0
@@ -366,7 +366,7 @@ RectTransform:
   - {fileID: 2064720966}
   - {fileID: 280182871}
   m_Father: {fileID: 493001112}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -427,7 +427,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &332681169
 RectTransform:
   m_ObjectHideFlags: 0
@@ -448,7 +448,7 @@ RectTransform:
   - {fileID: 1099065382}
   - {fileID: 1274096598}
   m_Father: {fileID: 493001112}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -829,10 +829,10 @@ RectTransform:
   - {fileID: 416734775}
   - {fileID: 139035082}
   - {fileID: 921611804}
-  - {fileID: 292973118}
   - {fileID: 1048377880}
   - {fileID: 2083665196}
   - {fileID: 332681169}
+  - {fileID: 292973118}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1071,7 +1071,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 675304296}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -2024,7 +2024,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 493001112}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2259,7 +2259,7 @@ MonoBehaviour:
   shieldSize: {fileID: 995117582}
   health: 3
   score: 0
-  coinsOwned: 50
+  coinsOwned: 500
   shopOpen: 0
   coinScore: 20
   coinSpawnTime: 2
@@ -3289,7 +3289,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1939840718}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -3361,7 +3361,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1969525607}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
   m_Name: 
@@ -3720,7 +3720,7 @@ RectTransform:
   m_Children:
   - {fileID: 644682903}
   m_Father: {fileID: 493001112}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3762,21 +3762,6 @@ PrefabInstance:
       propertyPath: extraDifficulty
       value: 0.9
       objectReference: {fileID: 0}
-    - target: {fileID: 7884950735719106819, guid: d98d7321470a752449265f9192d11f35,
-        type: 3}
-      propertyPath: hearts.Array.data[0]
-      value: 
-      objectReference: {fileID: 416734776}
-    - target: {fileID: 7884950735719106819, guid: d98d7321470a752449265f9192d11f35,
-        type: 3}
-      propertyPath: hearts.Array.data[1]
-      value: 
-      objectReference: {fileID: 139035083}
-    - target: {fileID: 7884950735719106819, guid: d98d7321470a752449265f9192d11f35,
-        type: 3}
-      propertyPath: hearts.Array.data[2]
-      value: 
-      objectReference: {fileID: 921611805}
     - target: {fileID: 7884950735719106829, guid: d98d7321470a752449265f9192d11f35,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3832,6 +3817,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7884950735719106819, guid: d98d7321470a752449265f9192d11f35,
+        type: 3}
+      propertyPath: hearts.Array.data[0]
+      value: 
+      objectReference: {fileID: 416734776}
+    - target: {fileID: 7884950735719106819, guid: d98d7321470a752449265f9192d11f35,
+        type: 3}
+      propertyPath: hearts.Array.data[1]
+      value: 
+      objectReference: {fileID: 139035083}
+    - target: {fileID: 7884950735719106819, guid: d98d7321470a752449265f9192d11f35,
+        type: 3}
+      propertyPath: hearts.Array.data[2]
+      value: 
+      objectReference: {fileID: 921611805}
     - target: {fileID: 7884950735719106830, guid: d98d7321470a752449265f9192d11f35,
         type: 3}
       propertyPath: moveSpeed

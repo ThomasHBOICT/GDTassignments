@@ -11,12 +11,11 @@ public class shieldRotator : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
     }
-
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         RotateShield();
     }
+
 
     private void RotateShield()
     {
@@ -29,6 +28,5 @@ public class shieldRotator : MonoBehaviour
             rotation = Quaternion.Euler(0, Mathf.Atan2(Input.GetAxis("RightVertical"), Input.GetAxis("RightHorizontal")) * 180 / Mathf.PI, 0);
             rb.transform.rotation = rotation;
         }
-       
     }
 }
