@@ -46,25 +46,53 @@ public class playerInteraction : MonoBehaviour
 
     IEnumerator Invurnerable()
     {
-        isInvurnerable = true;
-        gameObject.GetComponent<Renderer>().material.color = Color.red;
-        yield return new WaitForSeconds(2f);
-        gameObject.GetComponent<Renderer>().material.color = Color.white;
-        yield return new WaitForSeconds(0.25f);
-        gameObject.GetComponent<Renderer>().material.color = Color.red;
-        yield return new WaitForSeconds(0.25f);
-        gameObject.GetComponent<Renderer>().material.color = Color.white;
-        yield return new WaitForSeconds(0.25f);
-        gameObject.GetComponent<Renderer>().material.color = Color.red;
-        yield return new WaitForSeconds(0.25f);
-        gameObject.GetComponent<Renderer>().material.color = Color.white;
-        isInvurnerable = false;
+        MeshRenderer m = gameObject.GetComponent<MeshRenderer>();
         
+        isInvurnerable = true;
+        m.enabled = false;
+        yield return new WaitForSeconds(0.25f);
+        m.enabled = true;
+        yield return new WaitForSeconds(0.25f);
+        m.enabled = false;
+        yield return new WaitForSeconds(0.25f);
+        m.enabled = true;
+        // 1s
+        yield return new WaitForSeconds(0.25f);
+        m.enabled = false;
+        yield return new WaitForSeconds(0.25f);
+        m.enabled = true;
+        yield return new WaitForSeconds(0.25f);
+        m.enabled = false;
+        yield return new WaitForSeconds(0.25f);
+        m.enabled = true;
+        // 2s
+        yield return new WaitForSeconds(0.25f);
+        m.enabled = false;
+        yield return new WaitForSeconds(0.25f);
+        m.enabled = true;
+        yield return new WaitForSeconds(0.25f);
+        m.enabled = false;
+        yield return new WaitForSeconds(0.25f);
+        m.enabled = true;
+        // 3s
+        yield return new WaitForSeconds(0.25f);
+        m.enabled = false;
+        yield return new WaitForSeconds(0.25f);
+        m.enabled = true;
+        yield return new WaitForSeconds(0.15f);
+        m.enabled = false;
+        yield return new WaitForSeconds(0.15f);
+        m.enabled = true;
+        yield return new WaitForSeconds(0.1f);
+        m.enabled = false;
+        yield return new WaitForSeconds(0.1f);
+        m.enabled = true;
+        isInvurnerable = false;
     }
 
     private void EndGame()
     {
         Debug.Log("u died");
-        UI.PauseGame();
+        UI.PlayerDied();
     }
 }

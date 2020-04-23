@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class UIcontrol : MonoBehaviour
 {
-    public GameObject pauseMenuUI;
+    public GameObject onDeathMenu;
     public GameObject shopMenu;
+    public GameObject pauseMenu;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,15 +22,27 @@ public class UIcontrol : MonoBehaviour
 
     public void PlayGame()
     {
-        pauseMenuUI.SetActive(false);
+        onDeathMenu.SetActive(false);
         Time.timeScale = 1;
         SceneManager.LoadScene("Game");
     }
 
+    public void PlayerDied()
+    {
+        onDeathMenu.SetActive(true);
+        Time.timeScale = 0;
+    }
+
     public void PauseGame()
     {
-        pauseMenuUI.SetActive(true);
         Time.timeScale = 0;
+        pauseMenu.SetActive(true);
+    }
+
+    public void ContinueGame()
+    {
+        Time.timeScale = 1;
+        pauseMenu.SetActive(false);
     }
 
     public void QuitGame()
