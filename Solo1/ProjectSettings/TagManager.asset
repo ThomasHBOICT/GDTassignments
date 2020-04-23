@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Coin
   - Bullet
+  - Field
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Wall
   - Coin
   - Shield
-  - 
+  - field
   - 
   - 
   - 

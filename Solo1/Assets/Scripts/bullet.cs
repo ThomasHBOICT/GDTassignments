@@ -5,6 +5,7 @@ using UnityEngine;
 public class bullet : MonoBehaviour
 {
     public GameObject particles;
+    public GameObject inFieldParticle;
     public Color[] colors;
     private Transform tf;
     
@@ -21,5 +22,13 @@ public class bullet : MonoBehaviour
     {
         Instantiate(particles, tf.position, Quaternion.Euler(-90, 0 ,0));
         Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Field")
+        {
+            Instantiate(inFieldParticle, tf.position, Quaternion.Euler(-90, 0, 0));
+        }
     }
 }

@@ -125,6 +125,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particles: {fileID: 3518012211255852006, guid: 31f0712f25789d54695e67492656ef44,
     type: 3}
+  inFieldParticle: {fileID: 8458610665494159187, guid: 909f85160f996a147bc026c9a408f242,
+    type: 3}
   colors:
   - {r: 0, g: 1, b: 0.18460178, a: 3e-45}
   - {r: 112355200, g: 7.8e-43, b: 4.6e-44, a: 72.15}
