@@ -33,4 +33,12 @@ public class bullet : MonoBehaviour
             sound.SoundShoot();
         }
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.tag == "Field")
+        {
+            Instantiate(particles, tf.position, Quaternion.Euler(-90, 0, 0));
+        }
+    }
 }
