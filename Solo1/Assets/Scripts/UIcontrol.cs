@@ -8,17 +8,8 @@ public class UIcontrol : MonoBehaviour
     public GameObject onDeathMenu;
     public GameObject shopMenu;
     public GameObject pauseMenu;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameObject settingsMenu;
+   
 
     public void PlayGame()
     {
@@ -36,6 +27,17 @@ public class UIcontrol : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 0;
+        pauseMenu.SetActive(true);
+    }
+
+    public void OpenSettings()
+    {
+        settingsMenu.SetActive(true);
+        pauseMenu.SetActive(false);
+    }
+    public void CloseSettings()
+    {
+        settingsMenu.SetActive(false);
         pauseMenu.SetActive(true);
     }
 

@@ -48,7 +48,10 @@ MonoBehaviour:
   firePoint: {fileID: 4754120654678828312}
   shootRotator: {fileID: 4754120656488549600}
   bulletSpeed: 20
+  extraDifficulty: 0
   attackSpeed: 0
+  minShootTimer: 0.3
+  maxShootTimer: 0.7
 --- !u!1 &4754120656488549603
 GameObject:
   m_ObjectHideFlags: 0

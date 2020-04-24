@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour
 {
+    public soundController sound;
     public GameObject particles;
     public GameObject inFieldParticle;
     public Color[] colors;
@@ -29,6 +30,7 @@ public class bullet : MonoBehaviour
         if(other.tag == "Field")
         {
             Instantiate(inFieldParticle, tf.position, Quaternion.Euler(-90, 0, 0));
+            sound.SoundShoot();
         }
     }
 }

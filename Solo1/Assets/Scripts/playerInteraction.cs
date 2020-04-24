@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class playerInteraction : MonoBehaviour
 {
+    public soundController sound;
     public gameController controller;
     public playerHealth health;
     public UIcontrol UI;
@@ -26,6 +27,7 @@ public class playerInteraction : MonoBehaviour
         if (collision.collider.tag == "Bullet")
         {
             
+            
             if (isInvurnerable == false && health.health > 1)
             {
                 Camera.camShake();
@@ -33,12 +35,14 @@ public class playerInteraction : MonoBehaviour
                 // lose health
                 health.loseHealth();
                 StartCoroutine("Invurnerable");
+                sound.SoundHit();
             }
             else if (isInvurnerable == false && health.health == 1)
             {
-                
+                sound.SoundHit();
                 health.loseHealth();
                 EndGame();
+
             }
             
         }
@@ -47,46 +51,18 @@ public class playerInteraction : MonoBehaviour
     IEnumerator Invurnerable()
     {
         MeshRenderer m = gameObject.GetComponent<MeshRenderer>();
-        
         isInvurnerable = true;
-        m.enabled = false;
-        yield return new WaitForSeconds(0.25f);
-        m.enabled = true;
-        yield return new WaitForSeconds(0.25f);
-        m.enabled = false;
-        yield return new WaitForSeconds(0.25f);
-        m.enabled = true;
-        // 1s
-        yield return new WaitForSeconds(0.25f);
-        m.enabled = false;
-        yield return new WaitForSeconds(0.25f);
-        m.enabled = true;
-        yield return new WaitForSeconds(0.25f);
-        m.enabled = false;
-        yield return new WaitForSeconds(0.25f);
-        m.enabled = true;
-        // 2s
-        yield return new WaitForSeconds(0.25f);
-        m.enabled = false;
-        yield return new WaitForSeconds(0.25f);
-        m.enabled = true;
-        yield return new WaitForSeconds(0.25f);
-        m.enabled = false;
-        yield return new WaitForSeconds(0.25f);
-        m.enabled = true;
-        // 3s
-        yield return new WaitForSeconds(0.25f);
-        m.enabled = false;
-        yield return new WaitForSeconds(0.25f);
-        m.enabled = true;
-        yield return new WaitForSeconds(0.15f);
-        m.enabled = false;
-        yield return new WaitForSeconds(0.15f);
-        m.enabled = true;
-        yield return new WaitForSeconds(0.1f);
-        m.enabled = false;
-        yield return new WaitForSeconds(0.1f);
-        m.enabled = true;
+        for (int i = 0; i < 3; i++)
+        {
+            m.enabled = false;
+            yield return new WaitForSeconds(0.25f);
+            m.enabled = true;
+            yield return new WaitForSeconds(0.25f);
+            m.enabled = false;
+            yield return new WaitForSeconds(0.25f);
+            m.enabled = true;
+            yield return new WaitForSeconds(0.25f);
+        }
         isInvurnerable = false;
     }
 
