@@ -61,7 +61,7 @@ public class gameController : MonoBehaviour
     {
         Debug.Log("controller: coin pickup");
         coinUpdater(1);
-        //scoreUpdater(coinScore);
+        scoreUpdater(coinScore);
     }
 
    /* private void OpenCloseShop()
@@ -118,12 +118,12 @@ public class gameController : MonoBehaviour
         }
     }*/
 
-    /* private void scoreUpdater(int upValue)
+     private void scoreUpdater(int upValue)
      {
          score += upValue;
          updater.score = score;
          updater.ScoreUpdate();
-     }*/
+     }
 
     private void coinUpdater(int coinValue)
     {

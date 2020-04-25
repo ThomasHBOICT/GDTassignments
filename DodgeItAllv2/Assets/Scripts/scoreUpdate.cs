@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class scoreUpdate : MonoBehaviour
 {
-    //public Text scoreField;
+    public Text scoreField;
     public Text coinField;
     [HideInInspector]
     public int score = 0;
@@ -14,7 +14,7 @@ public class scoreUpdate : MonoBehaviour
 
     public void ScoreUpdate()
     {
-        //scoreField.text =  score.ToString();
+        scoreField.text =  score.ToString();
     }
 
     public void CoinUpdate()
