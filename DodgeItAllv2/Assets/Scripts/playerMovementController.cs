@@ -22,7 +22,7 @@ public class playerMovementController : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-        //movement = movement.normalized;
+        movement = movement.normalized;
         
 
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
