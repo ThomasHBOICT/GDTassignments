@@ -126,6 +126,8 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 5
     m_NumAlphaKeys: 2
+  particles: {fileID: 5817419228883492860, guid: 41459257809796541a3fa189894bf98a, type: 3}
+  infieldParticles: {fileID: 2207680421740071662, guid: 0cfc49a4e599ec44d8212a7897366f57, type: 3}
 --- !u!58 &3752364177417725062
 CircleCollider2D:
   m_ObjectHideFlags: 0
