@@ -52,7 +52,7 @@ public class AimAndShoot : MonoBehaviour
 
     void DrawLine()
     {
-        while (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Vector2 linePointOne = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             line.SetPosition(0, linePointOne);
