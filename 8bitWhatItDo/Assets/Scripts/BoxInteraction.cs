@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BoxInteraction : MonoBehaviour
 {
-    public PlayerInteraction playerInteraction;
+    /*public PlayerInteraction playerInteraction;
     public GameObject Item;
     public GameObject Hat;
     private bool inRange = false;
@@ -54,5 +54,5 @@ public class BoxInteraction : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.E) && inRange && toDrop == Pickups.Nothing)
         {
         }
-    }
+    }*/
 }

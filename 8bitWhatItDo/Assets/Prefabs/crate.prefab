@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7823562051383750152}
   - component: {fileID: 7823562051383750159}
   - component: {fileID: 7823562051383750158}
-  - component: {fileID: 7823562051383750153}
   m_Layer: 0
   m_Name: crate
   m_TagString: Untagged
@@ -99,19 +98,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5814711
---- !u!114 &7823562051383750153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7823562051383750157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16a4c8813f0801c488a759cac36fb8f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerInteraction: {fileID: 0}
-  Item: {fileID: 5158567474464910340, guid: afeddd95866fed94bb0c45e1afef9c3c, type: 3}
-  Hat: {fileID: 5158567474464910340, guid: afeddd95866fed94bb0c45e1afef9c3c, type: 3}
-  toDrop: 0

@@ -9,14 +9,48 @@ public class PlayerInteraction : MonoBehaviour
     public Transform head;
 
     public static bool hasItem = false;
+    private ItemPickup ItemPickup;
 
-    public void HandPickup(GameObject Item)
+    void Update()
     {
-        Instantiate(Item, hand.transform.position, gameObject.transform.rotation, hand.transform);
+        PressE();
+        PressQ(); ;
     }
 
-    public void HeadPickup(GameObject Item)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Instantiate(Item, head.transform.position, gameObject.transform.rotation, head.transform);
+        if (collision.tag == "Item" && hasItem == false)
+        {
+            ItemPickup = collision.GetComponent<ItemPickup>();            
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Item" && hasItem == false)
+        {
+            Debug.Log("collision exit");
+            ItemPickup = null;
+        }
+    }
+
+    private void PressE()
+    {
+        //Debug.Log(ItemPickup);
+        if (Input.GetKeyDown(KeyCode.E) && ItemPickup != null && hasItem == false)
+        {
+            Debug.Log("i did press e, nerd");
+            ItemPickup.Pickup();
+            hasItem = true;
+        }
+    }
+
+    private void PressQ()
+    {
+        if (Input.GetKeyDown(KeyCode.Q) && hasItem == true)
+        {
+            ItemPickup.DropItem();
+            hasItem = false;
+        }
     }
 }

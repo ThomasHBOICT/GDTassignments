@@ -3,62 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
-{
-    
-    private bool inRange = false;
-    private GameObject playerOnCollision;
+{    
+    private Transform playerOnCollision;
     private Transform handPos;
     private Transform thisItem;
     // Start is called before the first frame update
     void Start()
     {
-        thisItem = GetComponent<Transform>();
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        Pickup();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+       if (collision.tag == "Player")
         {
-            Debug.Log(PlayerInteraction.hasItem);
-           playerOnCollision = collision.gameObject;
-            handPos = collision.gameObject.transform.GetChild(0).transform ;
-            inRange = true;
+            playerOnCollision = collision.GetComponent<Transform>();
+            handPos = collision.gameObject.transform.GetChild(0).transform;
         }
     }
-
-   private void OnTriggerExit2D(Collider2D collision)
+    public void Pickup()
     {
-        if (collision.tag == "Player")
-        {
-            Debug.Log("out of range");
-            inRange = false;
-        }
+        transform.localScale = playerOnCollision.transform.localScale;
+        Debug.Log("pickup");
+        transform.position = handPos.position;
+        transform.parent = playerOnCollision.transform;
+        PlayerInteraction.hasItem = true;
     }
 
-    private void Pickup()
+    public void DropItem()
     {
-        if (Input.GetKeyDown(KeyCode.E) && inRange && PlayerInteraction.hasItem == false)
-        {
-            thisItem.transform.localScale = playerOnCollision.transform.localScale;
-           
-            Debug.Log("pickup");
-            thisItem.transform.position = handPos.position;
-            thisItem.transform.parent = playerOnCollision.transform;
-            PlayerInteraction.hasItem = true;
-        }
+        Debug.Log("drop item");
+        transform.parent = null;
+        PlayerInteraction.hasItem = false;
+    }
 
-        if (Input.GetKeyDown(KeyCode.Q) && PlayerInteraction.hasItem == true)
-        {
-            Debug.Log("drop item");
-            thisItem.parent = null;
-            //thisItem.position = new Vector3(0, 0, 0);
-            PlayerInteraction.hasItem = false;
-        }
+    public void yeet()
+    {
+        Debug.Log("yeeeeet!");
     }
 }
