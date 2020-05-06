@@ -28,6 +28,7 @@ public class BoxInteraction : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            Debug.Log("is in range");
             inRange = true;
         }
     }
@@ -35,6 +36,7 @@ public class BoxInteraction : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            Debug.Log("is out of range");
             inRange = false;
         }
     }

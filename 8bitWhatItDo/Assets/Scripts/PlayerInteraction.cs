@@ -8,6 +8,8 @@ public class PlayerInteraction : MonoBehaviour
     public Transform hand;
     public Transform head;
 
+    public static bool hasItem = false;
+
     public void HandPickup(GameObject Item)
     {
         Instantiate(Item, hand.transform.position, gameObject.transform.rotation, hand.transform);
