@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 2250349609377569575}
   - component: {fileID: 745153155}
   - component: {fileID: 745153156}
+  - component: {fileID: 1441902435}
   m_Layer: 0
   m_Name: banana
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,7 +97,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.36, y: 0}
+  m_Offset: {x: -0.12, y: -0.05}
   serializedVersion: 2
   m_Radius: 0.5
 --- !u!114 &745153156
@@ -111,3 +112,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98d4b7ffc4e3bac49a55b4767edab8b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1441902435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296597925328875683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9dfff5bfb66c714f99908ff9daa8cb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 0
+  runOnlyOnce: 0
