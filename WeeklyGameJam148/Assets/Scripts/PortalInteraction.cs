@@ -11,9 +11,12 @@ public class PortalInteraction : MonoBehaviour
     public Sprite coinSprite;
     public Sprite enemySprite;
 
-    private bool isFlipped = false;
+    public static bool isFlipped = false;
 
-
+    private void Start()
+    {
+        tilemap = GameObject.FindGameObjectWithTag("Tilemap").GetComponent<Tilemap>();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
@@ -34,11 +37,13 @@ public class PortalInteraction : MonoBehaviour
             {
                 enemy.GetComponent<SpriteRenderer>().sprite = enemySprite;
                 enemy.GetComponent<EnemyMovement>().enabled = true;
+                enemy.GetComponent<EnemyInteraction>().isCoin = false;
             }
             else
             {
                 enemy.GetComponent<SpriteRenderer>().sprite = coinSprite;
                 enemy.GetComponent<EnemyMovement>().enabled = false;
+                enemy.GetComponent<EnemyInteraction>().isCoin = true;
             }
         }        
     }
