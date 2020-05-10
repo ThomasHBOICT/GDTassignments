@@ -1,19 +1,7 @@
 fileFormatVersion: 2
-guid: 2a4758d1318f6dd41b724a9b3523b98d
+guid: 2505ab51ab46c014dacb20f84bff7a5d
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -6074187079133600768
-    second: walltiles_0
-  - first:
-      213: -5631325514632842383
-    second: walltiles_1
-  - first:
-      213: 6062209685652963542
-    second: walltiles_2
-  - first:
-      213: -3872450751253113725
-    second: walltiles_3
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -52,17 +40,17 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
+  alignment: 7
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 4
+  spritePixelsToUnits: 8
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 0
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -108,93 +96,13 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: walltiles_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 4
-        width: 4
-        height: 4
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 00469f0b80724bba0800000000000000
-      internalID: -6074187079133600768
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walltiles_1
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 4
-        width: 4
-        height: 4
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 17337bdc74389d1b0800000000000000
-      internalID: -5631325514632842383
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walltiles_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 4
-        height: 4
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6d00743179b412450800000000000000
-      internalID: 6062209685652963542
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walltiles_3
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 0
-        width: 4
-        height: 4
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3841d511f8a424ac0800000000000000
-      internalID: -3872450751253113725
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
-    physicsShape: []
+    physicsShape:
+    - - {x: 2.5, y: -5.5}
+      - {x: 2.5, y: -0.5}
+      - {x: -5.5, y: -0.5}
+      - {x: -5.5, y: -5.5}
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
