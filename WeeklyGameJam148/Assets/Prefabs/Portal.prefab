@@ -126,10 +126,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 0}
+  panel: {fileID: 0}
   enemies: []
-  dimentionColor: {r: 1, g: 0, b: 0, a: 1}
   coinSprite: {fileID: 21300000, guid: c68ce63f010de924886ec35ecae030d5, type: 3}
   enemySprite: {fileID: 21300000, guid: 4f2f781ebd74a5a4d8d5e056015cd42a, type: 3}
+  camShake: {fileID: 0}
+  shakingDuration: 1
 --- !u!114 &3555959446942266899
 MonoBehaviour:
   m_ObjectHideFlags: 0

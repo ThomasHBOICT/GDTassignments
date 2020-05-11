@@ -24,11 +24,11 @@ public class CMCamShake : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // camshake test
+        /*// camshake test
         if (Input.GetKey(KeyCode.E))
         {
             CamShake(1f);
-        }
+        }*/
         
         if (VirtualCamera != null && virtualCameraNoise != null)
         {

@@ -10,17 +10,22 @@ public class PlayerInteraction : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Coin")
-        {
-            scoreUpdate.ScoreUpdate(10);
-        }
+        EnemyInteraction enemyScript = collision.GetComponent<EnemyInteraction>();
         
-        if (collision.tag == "Enemy" && isInvurnerable == false)
+        
+        if (collision.tag == "Enemy")
         {
-            StartCoroutine("Rebirth");
-            Debug.Log("player damaged, ouchies");
-            health.currentHealth -= 1;
-            health.HealthUpdate();
+            if(enemyScript.isCoin == true)
+            {
+                scoreUpdate.ScoreUpdate(10);
+            }else if(enemyScript.isCoin == false && isInvurnerable == false)
+            {
+
+                StartCoroutine("Rebirth");
+                Debug.Log("player damaged, ouchies");
+                health.currentHealth -= 1;
+                health.HealthUpdate();
+            }
         }
     }
 

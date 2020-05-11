@@ -39,24 +39,21 @@ public class PortalInteraction : MonoBehaviour
     private void ChangeEnemies()
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        
         foreach (GameObject enemy in enemies)
         {
             if (enemy.GetComponent<AIPath>().enabled == false)
             {
                 // is coin now
-                enemy.GetComponentInChildren<SpriteRenderer>().sprite = enemySprite;
+                enemy.GetComponentInChildren<Animator>().SetBool("isCoin", false);   
                 enemy.GetComponent<AIPath>().enabled = true;
                 enemy.GetComponent<EnemyInteraction>().isCoin = false;
-                enemy.GetComponent<Transform>().tag = "Enemy";
             }
-            else
+            else if (enemy.GetComponent<AIPath>().enabled == true)
             {
                 // is enemy now
-                enemy.GetComponentInChildren<SpriteRenderer>().sprite = coinSprite;
+                enemy.GetComponentInChildren<Animator>().SetBool("isCoin", true);
                 enemy.GetComponent<AIPath>().enabled = false;
                 enemy.GetComponent<EnemyInteraction>().isCoin = true;
-                enemy.GetComponent<Transform>().tag = "Coin";
             }
         }        
     }
