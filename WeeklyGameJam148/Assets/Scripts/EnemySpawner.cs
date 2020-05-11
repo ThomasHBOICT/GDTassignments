@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    public GameObject player;
     public GameObject enemyPrefab;
     public float maxSpawnTimer;
 
@@ -12,6 +13,7 @@ public class EnemySpawner : MonoBehaviour
 
     private float spawnTimer;
     private float portalTimer;
+    private Vector3 enemySpawnPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,39 +23,61 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SpawnEnemy();
-        SpawnPortal();
+        SpawnTimer();
+        PortalTimer();
     }
 
-    private void SpawnEnemy()
+    private void SpawnTimer()
     {
         spawnTimer += Time.deltaTime;
 
         if (spawnTimer >= maxSpawnTimer)
         {
-
-            float Xrange = Random.Range(-8, 8);
-            float Yrange = Random.Range(-4.5f, 4.5f);
-
-            Vector3 spawnPos = new Vector3(Xrange, Yrange, 1);
-            Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
+            SpawnEnemy();
             spawnTimer = 0f;
         }
     }
 
-    private void SpawnPortal()
+    private void SpawnEnemy()
+    {
+        float Xrange = Random.Range(-13f, 13f);
+        float Yrange = Random.Range(-6f, 6f);
+
+        enemySpawnPos = new Vector3(Xrange, Yrange, 1);
+        if ((enemySpawnPos - player.transform.position).magnitude > 3)
+        {
+            Instantiate(enemyPrefab, enemySpawnPos, Quaternion.identity);
+        }
+        else
+        {
+            SpawnEnemy();
+        }
+    }
+
+    private void PortalTimer()
     {
         portalTimer += Time.deltaTime;
 
         if (portalTimer >= maxPortalTimer)
         {
-
-            float Xrange = Random.Range(-7, 7);
-            float Yrange = Random.Range(-3f, 3f);
-
-            Vector3 spawnPos = new Vector3(Xrange, Yrange, 1);
-            Instantiate(portalPrefab, spawnPos, Quaternion.identity);
+            SpawnPortal();
             portalTimer = 0f;
+        }
+    }
+
+    private void SpawnPortal()
+    {
+        float Xrange = Random.Range(-8.3f, 8.3f);
+        float Yrange = Random.Range(-1.85f, 1.85f);
+
+        Vector3 spawnPos = new Vector3(Xrange, Yrange, 1);
+        if ((spawnPos - player.transform.position).magnitude > 3)
+        {
+            Instantiate(portalPrefab, spawnPos, Quaternion.identity);
+        }
+        else
+        {
+            SpawnPortal();
         }
     }
 }

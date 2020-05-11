@@ -4,32 +4,13 @@ using UnityEngine;
 
 public class EnemyInteraction : MonoBehaviour
 {
-    public bool isCoin = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    public bool isCoin;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Player" && isCoin)
         {
-            if (!isCoin)
-            {
-                Debug.Log("Player damaged.");
-            }
-            else
-            {
-                Debug.Log("Player got coin.");
-                Destroy(gameObject);
-            }
+            Debug.Log("got a coin, pimpin aint easy.");
+            Destroy(gameObject);
         }
     }
 }

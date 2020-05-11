@@ -6,20 +6,20 @@ using UnityEngine.UI;
 public class scoreUpdate : MonoBehaviour
 {
     public Text scoreField;
-    //public Text coinField;
+    public Text healthField;
     [HideInInspector]
     public int score = 0;
-    [HideInInspector]
-    public int coins = 0; 
+    public int health = 3;
 
-    public void ScoreUpdate()
+    public void ScoreUpdate(int addScore)
     {
+        score += addScore;
         scoreField.text =  score.ToString();
     }
-
-    public void CoinUpdate()
+    
+    public void HealthUpdate()
     {
-        Debug.Log("coins updated");
-        //coinField.text = coins.ToString() + "X";
+        health -= 1;
+        healthField.text = health.ToString();
     }
 }
