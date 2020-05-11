@@ -12,6 +12,9 @@ public class PortalInteraction : MonoBehaviour
     public GameObject[] enemies;
     public Sprite coinSprite;
     public Sprite enemySprite;
+    public CMCamShake camShake;
+    [Header("Cam shake duration on portal enter")]
+    public float shakingDuration;
 
     public static bool isFlipped = false;
 
@@ -19,6 +22,7 @@ public class PortalInteraction : MonoBehaviour
     {
         tilemap = GameObject.FindGameObjectWithTag("Tilemap").GetComponent<Tilemap>();
         panel = GameObject.FindGameObjectWithTag("Panel").GetComponent<Panel>();
+        camShake = GameObject.FindGameObjectWithTag("Cinemachine").GetComponent<CMCamShake>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -28,6 +32,7 @@ public class PortalInteraction : MonoBehaviour
             ChangeMapColor();
             ChangeEnemies();
             EnableUIPanel();
+            camShake.CamShake(shakingDuration);
         }
     }
 

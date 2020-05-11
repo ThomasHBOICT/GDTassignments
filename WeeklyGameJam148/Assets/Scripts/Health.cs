@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
+    public DeathMenu deathMenu;
     public int currentHealth;
     public int numOfHearts;
     public Image[] hearts;
@@ -18,6 +19,10 @@ public class Health : MonoBehaviour
 
     public void HealthUpdate()
     {
+        if (currentHealth <= 0)
+        {
+            deathMenu.EnableMenu();
+        }
         if(currentHealth > numOfHearts)
         {
             currentHealth = numOfHearts;

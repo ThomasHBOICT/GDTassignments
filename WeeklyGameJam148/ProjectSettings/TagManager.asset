@@ -9,6 +9,7 @@ TagManager:
   - Panel
   - EnemyGFX
   - Coin
+  - Cinemachine
   layers:
   - Default
   - TransparentFX

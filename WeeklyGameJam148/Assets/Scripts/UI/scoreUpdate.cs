@@ -16,10 +16,4 @@ public class scoreUpdate : MonoBehaviour
         score += addScore;
         scoreField.text =  score.ToString();
     }
-    
-    public void HealthUpdate()
-    {
-        health -= 1;
-        healthField.text = health.ToString();
-    }
 }
