@@ -11,6 +11,9 @@ public class MainMenuControl : MonoBehaviour
     public GameObject arrow;
     public void GoToControls()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         homePanel.SetActive(false);
         controlsPanel.SetActive(true);
         player.SetActive(true);

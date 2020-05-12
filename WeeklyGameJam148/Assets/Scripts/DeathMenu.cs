@@ -21,12 +21,18 @@ public class DeathMenu : MonoBehaviour
 
     public void EnableMenu()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
         Time.timeScale = 0;
         deathMenuPanel.SetActive(true);
     }
 
     public void ReplayGame()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         Time.timeScale = 1;
         SceneManager.LoadScene("Scene");
     }
