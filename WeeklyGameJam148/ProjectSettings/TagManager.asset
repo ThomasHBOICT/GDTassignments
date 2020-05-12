@@ -10,6 +10,7 @@ TagManager:
   - EnemyGFX
   - Coin
   - Cinemachine
+  - Portal
   layers:
   - Default
   - TransparentFX
