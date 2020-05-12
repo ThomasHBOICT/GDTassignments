@@ -9,9 +9,19 @@ public class PlayerInteraction : MonoBehaviour
     public bool isInvurnerable = false;
     private Renderer render;
 
+   // [HideInInspector]
+    public AudioManager audioManager;
+
     private void Start()
     {
+        StartCoroutine("getAudioManager");
         render = GetComponent<Renderer>();
+    }
+
+    private IEnumerator getAudioManager()
+    {
+        yield return new WaitForSeconds(1f);
+        audioManager = FindObjectOfType<AudioManager>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,15 +32,22 @@ public class PlayerInteraction : MonoBehaviour
         {
             if(enemyScript.isCoin == true)
             {
+                // coin pickup 
+                audioManager.Play("CoinPickup");
                 scoreUpdate.ScoreUpdate(10);
             }else if(enemyScript.isCoin == false && isInvurnerable == false)
             {
-
+                // enemy hit
+                audioManager.Play("PlayerHit");
                 StartCoroutine("Rebirth");
                 Debug.Log("player damaged, ouchies");
                 health.currentHealth -= 1;
                 health.HealthUpdate();
             }
+        }
+        if (collision.tag == "Portal")
+        {
+            audioManager.Play("PortalEnter");
         }
     }
 
